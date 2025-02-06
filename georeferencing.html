@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="create-geo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Georeferencing</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="page1.html">ArcGIS Pro Mapping </a>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <h1>Georeferencing</h1>
+        <ol>
+          <li>
+            Select the image layer and go to <strong>Imagery</strong> tab to
+            click <strong>Georeference</strong> under Alignment.
+          </li>
+          <img class="georeference" src="./Pictures/georeference.png" />
+          <li>
+            Once Georeferencing is selected, a new action pane opens. Use the
+            Adjust panel to automatically georeference the image to import or
+            add control points. To commit, save as new or save with the control
+            points and transformation you specified.
+          </li>
+          <img
+            class="georeference-tool"
+            src="./Pictures/georeference-tool.png"
+          />
+        </ol>
+      </div>
+
+      <button class="toggle-btn">Other Resources</button>
+      <div class="side-bar">
+        <h2>Other Resources</h2>
+        <a href="create-geo.html" class="active">Create File Geodatabase</a>
+        <a href="georeferencing.html">Georeferencing</a>
+        <a
+        href="https://pro.arcgis.com/en/pro-app/latest/help/main/welcome-to-the-arcgis-pro-app-help.htm"
+        target="_blank"
+        >ArcGIS Pro Documentation</a
+      >
+
+    </div>
+  </body>
+  <script>
+       // Select the tab container and toggle button
+       const tabContainer = document.querySelector(".side-bar");
+    const toggleButton = document.querySelector(".toggle-btn");
+
+    // Function to toggle the tab visibility
+    toggleButton.addEventListener("click", function () {
+      if (
+        tabContainer.style.display === "none" ||
+        tabContainer.style.opacity == 0
+      ) {
+        tabContainer.style.display = "block";
+        setTimeout(() => {
+          tabContainer.style.opacity = 1;
+          tabContainer.style.transform = "translateY(0)";
+        }, 10); // Delay for smooth transition
+      } else {
+        tabContainer.style.opacity = 0;
+        tabContainer.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          tabContainer.style.display = "none";
+        }, 300); // Wait for the transition to complete before hiding the tab
+      }
+    });
+  </script>
+</html>

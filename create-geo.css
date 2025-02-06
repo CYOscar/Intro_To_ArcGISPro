@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #001524;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(-45deg, #e59e88, #cfa9b8, #abe0f3, #a5e0d2);
+}
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  z-index: 1000;
+  color: black;
+}
+
+.topnav a {
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+}
+
+.topnav a:after {
+  bottom: 0;
+  background: none repeat scroll 0 0 transparent;
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 4px;
+  content: "";
+  background: linear-gradient(to left, #f3a3bd, #e7c279);
+  transition: width 0.3s ease 0s;
+  width: 0;
+}
+
+.topnav a:hover:after {
+  width: 100%;
+  left: 0;
+}
+.container {
+  align-items: center;
+  min-height: 80vh;
+  margin-top: 15px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.content {
+  text-align: center;
+  max-width: 820px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 7px;
+
+  border-spacing: 25px;
+  transition: all 0.5s ease;
+  padding-bottom: 30px;
+}
+
+h1 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.3;
+  text-decoration-style: wavy;
+  padding-bottom: 30px;
+}
+
+ol {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+li {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  margin-left: 8px;
+  list-style-position: initial;
+}
+
+.geodatabase {
+  width: 350px;
+  height: 300px;
+}
+
+h2 {
+  left: 5px;
+  text-align: left;
+}
+
+.side-bar {
+  position: fixed;
+  bottom: 20px; /* distance from bottom */
+  left: 20px; /* distance from left */
+  background-color: #caa0f4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  display: none;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  transform: translateY(20px); /* Slightly hide off-screen */
+}
+
+/* Tab links */
+.side-bar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+  margin: 5px 0;
+  background-color: #caa0f4;
+  transition: background-color 0.3s ease;
+}
+
+.side-bar h2 {
+  text-align: center;
+}
+/* Change background on hover */
+.side-bar a:hover {
+  background-color: #eebdbd;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 66px; /* Position it to the right of the tab */
+  background-color: #702963;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Ensure button is on top of tab */
+  text-align: center;
+}
+
+/* Button hover effect */
+.toggle-btn:hover {
+  background-color: #555;
+}
+
+.geo {
+  width: 300px;
+  height: auto;
+}
+
+.georeference {
+  width: 500px;
+  height: auto;
+}

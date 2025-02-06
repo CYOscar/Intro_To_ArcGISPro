@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>ArcGIS Pro Mapping</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progressives-steps">
+        <div class="progress-step">
+          <label for="step-1"> Step 1 </label>
+        </div>
+        <div class="progress-step">
+          <label for="step-2"> Step 2 </label>
+        </div>
+        <div class="progress-step">
+          <label for="step-3"> Step 3 </label>
+        </div>
+      </div>
+
+      <input type="radio" name="step" id="step-1" checked />
+      <input type="radio" name="step" id="step-2" />
+      <input type="radio" name="step" id="step-3" />
+
+      <div class="progress-inner"></div>
+      <div class="progress-completed"></div>
+      <div class="content fade-in show" id="content-step-1">
+        <h1>Step 1: Setting Up ArcGIS Pro</h1>
+        <ol>
+          <li>
+            Open <u>ArcGIS Pro </u>that is already installed on the computer.
+          </li>
+          <li>
+            Click on the ArcGIS organization's URL. type 'nau', click enter and
+            sign in with your student credentials. <br />
+            Note: If you would like to have your own AcrGIS Pro software on your
+            computer, you can get a subscription from Esri.
+          </li>
+          <img src="./Pictures/Sign-in.png" />
+          <li>
+            Once you are signed in, click <strong>map</strong> for a new
+            project.
+          </li>
+          <li>
+            The <strong>New Project</strong> window appears. By default,
+            projects are saved in a new folder. Click <strong>Map</strong> and
+            create a name for the project. Find your folder where your project
+            will be stored.
+          </li>
+          <li>Click <strong>OK.</strong></li>
+          <li>
+            On either side of the map are panes. By default, the
+            <strong>Contents</strong> and <strong>Catalog</strong> panes are
+            open, although other panes may be open if you've used ArcGIS Pro
+            before. The <strong>Contents</strong> pane lists the layers on the
+            map and the <strong>Catalog</strong> pane lists all files associated
+            with the project.
+          </li>
+          <img src="./Pictures/User-interface.png" />
+        </ol>
+      </div>
+
+      <div class="content fade-in" id="content-step-2" style="display: none">
+        <h1>Step 2: Add Basemap and Data</h1>
+        <ol>
+          <li>
+            On the<strong> Map</strong> tab, click <strong>Basemap</strong>.
+            Pick a basemap of your choice.
+          </li>
+          <img src="./Pictures/Basemap-tab.png" />
+          <li>
+            To add data, on the <strong>Map</strong> tab, in the
+            <strong>Layer</strong> group, click the
+            <strong>Add Data</strong> button to find your folder.
+          </li>
+          <img src="./Pictures/Add-data.png" />
+          <li>After adding data, the layers are listed on the Content pane.</li>
+          <img src="./Pictures/content.png" />
+          <li>
+            If the standalone table is .xls, .xlsx or csv from Excel, the XY
+            table will need to be converted to point layer to be visible on the
+            map. First, go to <strong>Map</strong> tab on top and click on
+            <u>XY Table To Point</u> under <strong>Layer</strong>.
+          </li>
+          <li>
+            Once you click on <u>XY Table To Point</u>, you should see a pop-up
+            page on the right. Add the <u>table</u> to Input Table. Create a
+            <u>name</u> for this layer on Output Feature Class. Make sure the X
+            field and Y field are correct and the coordinate system is selected
+            for the UTM zone. Then, click <strong>run.</strong>
+          </li>
+          <img class="table" src="./Pictures/xytable.png" />
+
+          <div class="container2">
+            <div class="text">
+              <li class="text-1">
+                Now, you can see points on the map. If you want to
+                <br />
+                change the symbol of each layer, click the symbol. A Symbology
+                pane will appear on the right to edit.
+              </li>
+            </div>
+            <div class="image">
+              <img class="symbols" src="./Pictures/symbols.png" />
+            </div>
+          </div>
+          <li>
+            To edit features in a layer, click the layer name to highlight and
+            edit, click
+            <strong>Edit</strong> tab and click <u>Snapping</u> to activate.
+            Then, click <u>Create</u>.
+          </li>
+
+          <img class="table" src="./Pictures/edit-features.png" />
+          <li>
+            You should see a pop-up on the right for Create Features. You can
+            now add feature on the map.
+          </li>
+          <img class="create" src="./Pictures/create-features.png" />
+
+          <li>
+            Once you add a feature on the map, double-click the feature to
+            confirm. If you need to delete a feature, make sure to click the
+            feature and click <u>delete</u> that is next to Create and Modify.
+            You can also click <u>discard</u> to delete all edits.
+          </li>
+          <li>
+            After making changes to the features, click <strong>save</strong> to
+            accept changes.
+          </li>
+          <img src="./Pictures/save-button.png" />
+          <li>Click save on top-right corner to save your project.</li>
+          <img src="./Pictures/save.png" />
+        </ol>
+      </div>
+
+      <div class="content fade-in" id="content-step-3" style="display: none">
+        <h1>Step 3: Create Map Layout</h1>
+        <ol>
+          <li>
+            To create a map layout, click on the <strong>Insert</strong> tab and
+            click <strong>New Layout</strong>.
+          </li>
+          <li>
+            Pick a map layout size. The most common size is 8.5" x 11" Letter.
+          </li>
+          <img src="./Pictures/layout-size.png " />
+          <li>
+            The map layout is added to the map view as a new tab. In the Catalog
+            pane, there is now a folder called Layouts. Expand Layouts. In the
+            Layout folder, right-click <u>Layout</u> and choose <u>Rename</u> to
+            give it an appropriate name.
+          </li>
+          <img class="rename" src="./Pictures/rename.png" />
+
+          <li>Save your project.</li>
+          <li>
+            Your layout is now ready to add elements, including a map frame,
+            legend, north arrow, scale bar and title. On the
+            <strong>Insert</strong> tab, click <u>Map Frame</u> to add a map
+            frame to the layout.
+          </li>
+          <li>
+            Once you click a map from the Map frame, draw a box inside the
+            boundaries of the layout. Adjust the map size after it has been
+            created.
+          </li>
+          <li>
+            If you want to move the map within the map frame, right-click the
+            map and click
+            <strong>Activate</strong>.
+          </li>
+          <li>In the map frame, pan the map.</li>
+          <li>
+            After adjustments are made, go to <strong>Layout</strong> tab and
+            click Close Activation.
+          </li>
+          <img class="activation" src="./Pictures/activation.png" />
+          <li>Save your project.</li>
+          <li>
+            Next, to add a legend, click <u>Legend</u> on the
+            <strong>Insert</strong>
+            tab. Pick a legend.
+          </li>
+          <img class="legend" src="Pictures/legend.png" />
+          <li>Then, add the North Arrow, Scale Bar, and Text for the title.</li>
+          <img src="./Pictures/elements.png" />
+          <li>
+            To change the appearance of each element, double-click the element
+            on the map layout and Element page will appear on the right.
+          </li>
+          <li>
+            After incorporating all the elements into the map layout, your final
+            layout should resemble something like this.
+          </li>
+          <img class="layout" src="./Pictures/layout.png" />
+          <li>
+            Now, we can share the map layout. Go to <strong>Share</strong> tab
+            and click <strong>Export Layout</strong>. A pop-up window will
+            appear on the right.
+          </li>
+          <img src="./Pictures/export.png" />
+          <li>
+            Choose the right File Type and choose the folder where the layout
+            will be saved.<br />
+            Note: The default file type is PDF. If the map is a raster image, it
+            is recommended to save as PNG.
+          </li>
+          <li>
+            Accept the other default settings. Click <strong>Export</strong>.
+          </li>
+        </ol>
+      </div>
+      <button class="scroll-to-top" id="scrollToTopBtn">Scroll to Top</button>
+
+      <button class="toggle-btn">Other Resources</button>
+      <div class="side-bar">
+        <h2>Other Resources</h2>
+        <a href="create-geo.html" class="active">Create File Geodatabase</a>
+        <a href="georeferencing.html">Georeferencing</a>
+        <a
+          href="https://pro.arcgis.com/en/pro-app/latest/help/main/welcome-to-the-arcgis-pro-app-help.htm"
+          target="_blank"
+          >ArcGIS Pro Documentation</a
+        >
+      </div>
+    </div>
+  </body>
+  <script>
+    function handleStepClick(stepId) {
+      // Set the radio button to checked
+      document.getElementById(stepId).checked = true;
+
+      // Wait for the radio button to update, then navigate
+      setTimeout(function () {
+        window.location.href = document
+          .querySelector(`#${stepId} + label a`)
+          .getAttribute("href");
+      }, 0);
+    }
+
+    // Select the tab container and toggle button
+    const tabContainer = document.querySelector(".side-bar");
+    const toggleButton = document.querySelector(".toggle-btn");
+
+    // Function to toggle the tab visibility
+    toggleButton.addEventListener("click", function () {
+      if (
+        tabContainer.style.display === "none" ||
+        tabContainer.style.opacity == 0
+      ) {
+        tabContainer.style.display = "block";
+        setTimeout(() => {
+          tabContainer.style.opacity = 1;
+          tabContainer.style.transform = "translateY(0)";
+        }, 10); // Delay for smooth transition
+      } else {
+        tabContainer.style.opacity = 0;
+        tabContainer.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          tabContainer.style.display = "none";
+        }, 300); // Wait for the transition to complete before hiding the tab
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const steps = document.querySelectorAll('input[name="step"]');
+      const contents = document.querySelectorAll(".content");
+
+      steps.forEach((step) => {
+        step.addEventListener("change", function () {
+          contents.forEach((content) => {
+            content.style.display = "none";
+            content.classList.remove("show");
+          });
+
+          const selectedContent = document.getElementById(`content-${this.id}`);
+          selectedContent.style.display = "block";
+          setTimeout(() => {
+            selectedContent.classList.add("show");
+          }, 10); // Slight delay to trigger the transition
+        });
+      });
+    });
+
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Show the button when user scrolls down 200px from the top of the page
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        scrollToTopBtn.style.display = "block"; // Show button
+      } else {
+        scrollToTopBtn.style.display = "none"; // Hide button
+      }
+    };
+
+    // When the button is clicked, scroll to the top of the page
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0, // Scroll to the top of the page
+        behavior: "smooth", // Smooth scrolling
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #04283c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(-45deg, #e59e88, #cfa9b8, #abe0f3, #a5e0d2);
+}
+
+.container {
+  align-items: center;
+  min-height: 80vh;
+  margin-top: 0px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 7px;
+
+  border-spacing: 25px;
+  border-style: dotted;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body h1 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.3;
+}
+
+ol {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+li {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 25px;
+  margin-left: 8px;
+  list-style-position: initial;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.progress-steps {
+  display: flex; /* Display steps in a row */
+  justify-content: space-between; /* Evenly space the steps */
+  width: 100%; /* Ensure steps take the full width */
+  max-width: 600px;
+  margin-top: 35px;
+  margin-bottom: 20px; /* Add some space between steps and content */
+}
+
+.progress-step {
+  display: inline-block;
+  padding: 15px;
+  margin: 20px 33px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+#step-1:checked ~ .progressive-steps .progress-step:nth-child(1)::before,
+#step-2:checked ~ .progressive-steps .progress-step:nth-child(2)::before,
+#step-3:checked ~ .progressive-steps .progress-step:nth-child(3)::before {
+  background-color: #702963;
+  color: #fff;
+}
+
+#step-1:checked ~ .progress-inner,
+#step-2:checked ~ .progress-inner,
+#step-3:checked ~ .progress-inner {
+  width: 100%;
+  transition: width 0.5s ease;
+  /* Adjust based on the number of steps */
+}
+
+#step-1:checked ~ .progress-completed {
+  width: 33.33%;
+}
+
+#step-2:checked ~ .progress-completed {
+  width: 18%;
+  left: -65px;
+}
+
+#step-3:checked ~ .progress-completed {
+  width: 38%;
+}
+.progress-completed,
+.progress-inner {
+  position: relative;
+  background-color: repeating-linear-gradient(
+    45deg,
+    #e9967a,
+    #e9967a 4px,
+    #b05f03 4px,
+    #b05f03 10px
+  );
+  z-index: 1;
+  width: 0%;
+  border-radius: 6px;
+  transform-origin: left;
+  left: 0;
+  height: 6px;
+}
+.progress-completed {
+  position: relative;
+  top: -122px;
+  width: 60%;
+  z-index: -2;
+  right: 40px;
+  left: 0px;
+  background-color: #e9967a;
+}
+
+.progress-step::before {
+  content: ""; /* This is necessary for the pseudo-element to render */
+  position: absolute; /* Position it relative to the parent .progress-step */
+  top: -17px; /* Adjust as needed */
+  left: 51%;
+  transform: translateX(-50%); /* Center it horizontally */
+  background-color: #fff;
+  color: #702963;
+  border: 3px solid #9966cc;
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  line-height: 30px;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.progress-step label {
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  padding-top: 50px;
+  display: block;
+}
+
+.progress-step label a {
+  text-decoration: none;
+}
+
+.progress-step:hover,
+.progress-step label a:hover {
+  color: #9966cc;
+}
+
+.progress-step:hover::before {
+  background-color: #702963;
+  color: #fff;
+}
+
+.symbols {
+  height: 250px;
+  float: left;
+}
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-1 {
+  text-align: center;
+  margin-right: 14px;
+}
+
+.side-bar {
+  position: fixed;
+  bottom: 20px; /* distance from bottom */
+  left: 20px; /* distance from left */
+  background-color: #caa0f4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  display: none;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  transform: translateY(20px); /* Slightly hide off-screen */
+}
+
+/* Tab links */
+.side-bar a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+  margin: 5px 0;
+  background-color: #caa0f4;
+  transition: background-color 0.3s ease;
+}
+
+/* Change background on hover */
+.side-bar a:hover {
+  background-color: #eebdbd;
+}
+
+/* Toggle button */
+.toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 66px; /* Position it to the right of the tab */
+  background-color: #702963;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Ensure button is on top of tab */
+  text-align: center;
+}
+
+/* Button hover effect */
+.toggle-btn:hover {
+  background-color: #555;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+.fade-in.show {
+  opacity: 1;
+}
+
+.symbols {
+  height: 250px;
+  float: left;
+}
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-1 {
+  text-align: center;
+  margin-right: 12px;
+}
+
+.table {
+  width: 600px;
+}
+
+.create {
+  width: 400px;
+}
+
+/* Style for the "Scroll to Top" button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #702963;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Hide button initially */
+}
+
+.scroll-to-top:hover {
+  background-color: #555;
+}
+
+/* Optional: Add fade-in effect (for content) */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-in.show {
+  opacity: 1;
+}
+
+.rename {
+  width: auto;
+  height: 200px;
+}
+
+.activation,
+.layout {
+  width: 450px;
+  height: auto;
+}
+
+.legend {
+  width: auto;
+  height: 200px;
+}
